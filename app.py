@@ -6,8 +6,8 @@ app = Flask(__name__)
 
 def response():
     query = dict(request.form)['query']
-    if(query == 'hola'):
-        result = query + "hola amigo"
+    if 'medico' in query or 'Medico' in query or 'Médico' in query or 'médico' in query:
+        result = "La lista de médicos es: medico 1, medico 2, medico 3, etc..."
     else:
         result = query + " " + time.ctime()
     return jsonify({"response" : result})
